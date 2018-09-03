@@ -6,6 +6,7 @@ var qrcodestreamerClass = {
   dataArr: [],
   codeArr: [],
   fullHash: "",
+  dispFullHash: "",
   qrcodeObj: {},
   adler32Obj: {},
   initFunct: function(qrc,ad32) {
@@ -18,11 +19,13 @@ var qrcodestreamerClass = {
       if(this.dataSize > 50) {
         this.dataSize = 50;
       }
-      else if(this.dataSize <= 10) {
-        this.dataSize = 11;
-      }
       this.dataChunkSize = Math.ceil(data.length/this.dataSize);
       this.codeSize = this.dataChunkSize.toString().length + 9;
+      while(this.dataSize <= this.codeSize) {
+        this.dataSize++;
+        this.dataChunkSize = Math.ceil(data.length/this.dataSize);
+        this.codeSize = this.dataChunkSize.toString().length + 9;
+      }
       while(this.codeSize >= this.dataSize) {
         this.dataSize++;
         this.dataChunkSize = Math.ceil(data.length/this.dataSize);
@@ -62,17 +65,35 @@ var qrcodestreamerClass = {
       temp = "0" + temp;
     }
     this.fullHash = temp;
+    this.dispFullHash = this.codeArr.length + "-" + temp;
+    while(this.dispFullHash.length < this.codeSize) {
+      this.dispFullHash = "0" + this.dispFullHash;
+    }
   },
   nextCode: function() {
     if(this.iterator >= this.codeArr.length*2) {
-      this.iterator = 0;
+      this.iterator = -1;
+      qrcs.qrcodeObj._htOption.colorDark = "#009000"
+      this.qrcodeObj.makeCode(this.dispFullHash);
     }
-    if(this.iterator % 2 == 0) {
+    else if(this.iterator % 2 == 0) {
+      qrcs.qrcodeObj._htOption.colorDark = "#900000"
       this.qrcodeObj.makeCode(this.codeArr[Math.floor(this.iterator/2)]);
     }
     else {
+      qrcs.qrcodeObj._htOption.colorDark = "#000090"
       this.qrcodeObj.makeCode(this.dataArr[Math.floor(this.iterator/2)]);
     }
     this.iterator++;
+  },
+  clearFunc: function() {
+    this.codeSize = 10;
+    this.dataSize = 20;
+    this.dataChunkSize = 0;
+    this.iterator = 0;
+    this.dataArr = [];
+    this.codeArr = [];
+    this.fullHash = "";
+    this.dispFullHash = "";
   }
 };
