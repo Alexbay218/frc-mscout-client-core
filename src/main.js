@@ -1,3 +1,13 @@
+var lyt, evt;
+window.addEventListener('message', function(event) {
+  lyt = Object.assign({}, layoutClass);
+  evt = Object.assign({}, eventsClass);
+  evt.initFunct(event.data);
+  lyt.initFunct(evt);
+  evt.assignEventListeners();
+});
+
+/*
 var qrcs = Object.assign({}, qrcodestreamerClass);
 var disp = document.getElementById("display");
 var hashdisp = document.getElementById("hash");
@@ -15,3 +25,4 @@ var funct = () => {
   window.setTimeout(funct, t);
 }
 funct();
+*/

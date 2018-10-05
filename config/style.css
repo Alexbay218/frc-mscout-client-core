@@ -1,0 +1,12 @@
+body {
+  margin: 0px;
+  overflow: hidden;
+}
+.group {
+  border: 1px solid black;
+  white-space: nowrap;
+}
+.input {
+  display: inline-block;
+  border: 1px dotted black;
+}

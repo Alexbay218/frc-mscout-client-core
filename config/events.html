@@ -1,0 +1,43 @@
+<div id="data">
+{
+  "events": [
+    {
+      "eventName":"cubeUp",
+      "eventTitle":"Pick Up Cube",
+      "eventKey":"a",
+      "variableLink":[{"var":"cubeCount","amt":1}]
+    },
+    {
+      "eventName":"cubeDown",
+      "eventTitle":"Dropped Cube",
+      "eventKey":"b",
+      "variableLink":[{"var":"cubeCount","amt":-1}]
+    }
+  ],
+  "layouts": [
+    {
+      "eventName":"cubeUp",
+      "groupName":"cube",
+      "heightWeight":1,
+      "widthWeight":0.25
+    },
+    {
+      "eventName":"cubeDown",
+      "groupName":"cube",
+      "heightWeight":1,
+      "widthWeight":0.75
+    }
+  ],
+  "variables": [
+    {
+      "variableName":"cubeCount",
+      "variableLimit":[0,1],
+      "variableAmount":1
+    }
+  ],
+  "variableHeightWeight": 0.1
+}
+</div>
+<script>
+  window.parent.postMessage(document.getElementById("data").innerText,"*");
+</script>
