@@ -1,5 +1,20 @@
 CACHE MANIFEST
-/config/*
-/js-adler/*
-/qrcodejs/*
-/src/*
+/index.html
+
+/assets/first.ico
+
+/config/style.css
+/config/initStyle.css
+/config/qrStyle.css
+/config/eventConfig.js
+
+/js-adler/adler32.js
+
+/qrcodejs/qrcode.js
+
+/src/qrcodestreamer.js
+/src/init.js
+/src/dataprotocol.js
+/src/events.js
+/src/layout.js
+/src/main.js
