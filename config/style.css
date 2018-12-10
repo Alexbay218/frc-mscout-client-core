@@ -2,11 +2,20 @@ body {
   margin: 0px;
   overflow: hidden;
 }
+div {
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
 .group {
   border: 1px solid black;
   white-space: nowrap;
 }
 .input {
-  display: inline-block;
+  display: inline-flex;
+  border: 1px dotted black;
+}
+.variable {
+  display: inline-flex;
   border: 1px dotted black;
 }
