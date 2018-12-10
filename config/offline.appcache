@@ -1,20 +1,20 @@
 CACHE MANIFEST
-/index.html
+/frc-mscout-client-core/index.html
 
-/assets/first.ico
+/frc-mscout-client-core/assets/first.ico
 
-/config/style.css
-/config/initStyle.css
-/config/qrStyle.css
-/config/eventConfig.js
+/frc-mscout-client-core/config/style.css
+/frc-mscout-client-core/config/initStyle.css
+/frc-mscout-client-core/config/qrStyle.css
+/frc-mscout-client-core/config/eventConfig.js
 
-/js-adler/adler32.js
+/frc-mscout-client-core/js-adler/adler32.js
 
-/qrcodejs/qrcode.js
+/frc-mscout-client-core/qrcodejs/qrcode.js
 
-/src/qrcodestreamer.js
-/src/init.js
-/src/dataprotocol.js
-/src/events.js
-/src/layout.js
-/src/main.js
+/frc-mscout-client-core/src/qrcodestreamer.js
+/frc-mscout-client-core/src/init.js
+/frc-mscout-client-core/src/dataprotocol.js
+/frc-mscout-client-core/src/events.js
+/frc-mscout-client-core/src/layout.js
+/frc-mscout-client-core/src/main.js
