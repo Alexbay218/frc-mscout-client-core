@@ -8,7 +8,7 @@ CACHE MANIFEST
 /frc-mscout-client-core/config/qrStyle.css
 /frc-mscout-client-core/config/eventConfig.js
 
-/frc-mscout-client-core/js-adler/adler32.js
+/frc-mscout-client-core/js-adler32/adler32.js
 
 /frc-mscout-client-core/qrcodejs/qrcode.js
 
