@@ -14,12 +14,15 @@ var dataProtocolClass = {
 		this.hasDisplayed = true;
 		this.dispElement = document.getElementById("display");
 		this.dispElement.innerHTML = "";
+		this.dispElement.insertAdjacentHTML("beforeend", "<div id=\"qrspacer\"></div>");
 		this.dispElement.insertAdjacentHTML("beforeend", "<div id=\"qrdisplay\"></div>");
 		var tmp = document.getElementById("qrdisplay");
 		var lowest = tmp.offsetWidth < tmp.offsetHeight ? tmp.offsetWidth : tmp.offsetHeight;
+		var tmp = document.getElementById("qrspacer");
+		tmp.style.height = (lowest*0.1) + "px";
 		this.qrObj = new QRCode("qrdisplay", {
-			width: lowest,
-			height: lowest,
+			width: lowest*0.9,
+			height: lowest*0.9,
 			correctLevel: QRCode.CorrectLevel.L
 		});
 		this.qrcsObj = Object.assign({}, qrcodestreamerClass);

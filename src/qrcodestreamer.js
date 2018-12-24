@@ -73,15 +73,15 @@ var qrcodestreamerClass = {
   nextCode: function() {
     if(this.iterator >= this.codeArr.length*2) {
       this.iterator = -1;
-      this.qrcodeObj._htOption.colorDark = "#009000"
+      this.qrcodeObj._htOption.colorDark = "#004000"
       this.qrcodeObj.makeCode(this.dispFullHash);
     }
     else if(this.iterator % 2 == 0) {
-      this.qrcodeObj._htOption.colorDark = "#900000"
+      this.qrcodeObj._htOption.colorDark = "#400000"
       this.qrcodeObj.makeCode(this.codeArr[Math.floor(this.iterator/2)]);
     }
     else {
-      this.qrcodeObj._htOption.colorDark = "#000090"
+      this.qrcodeObj._htOption.colorDark = "#000040"
       this.qrcodeObj.makeCode(this.dataArr[Math.floor(this.iterator/2)]);
     }
     this.iterator++;
